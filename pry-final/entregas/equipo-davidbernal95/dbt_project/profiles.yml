@@ -1,0 +1,8 @@
+minimercado:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('MINIMERCADO_DB') }}"
+      schema: analitica
+      threads: 2
