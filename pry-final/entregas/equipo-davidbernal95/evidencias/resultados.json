@@ -1,0 +1,622 @@
+{
+  "fecha_local": "2026-11-07",
+  "entorno": "Windows, Python 3.12.14",
+  "semilla": 2026,
+  "validacion": {
+    "dagster_assets": 4,
+    "dbt_modelos": 18,
+    "dbt_pruebas": 95,
+    "pytest_aprobadas": 4,
+    "ruff": "correcto",
+    "uv_lock": "verificado"
+  },
+  "sha256_csv": {
+    "productos.csv": "3729e12392290df7e7dd9a5a556ec6a3b6ba59317e7c5035644e88c7a8f27495",
+    "vendedores.csv": "86c269e2f94cfa3b751db642b7ef1cad99fa1eee8f84d18bd69a426180f511de",
+    "compras.csv": "74e4585cce4144bf81a7965f7b88800ae8468fa980895f2aa608395c4dfad114",
+    "ventas.csv": "81d0328e1d58530f2d6ee801d88c994b19711b7cc7d3b948b12cfd68b71a5d6d",
+    "movimientos_stock.csv": "d15b799539fa535d1f473ce90113dd7b6eb0a79d62aa39f95f5290f8a4958087"
+  },
+  "resultados": {
+    "filas_origen": {
+      "productos": 20,
+      "vendedores": 5,
+      "compras": 108,
+      "ventas": 801,
+      "movimientos_stock": 909
+    },
+    "controles": "aprobados",
+    "01_estadistica": [
+      {
+        "dias": 90,
+        "facturacion_total": "16631337.50",
+        "unidades_vendidas": 1979,
+        "lineas_venta": 801,
+        "importe_promedio_linea": 20763.22,
+        "promedio_diario": 184792.64,
+        "mediana_diaria": "181582.50",
+        "desviacion_diaria": 68770.55
+      }
+    ],
+    "02_inventario": [
+      {
+        "producto": "Arroz",
+        "stock_actual": 0,
+        "dias_con_stock": 30,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 14.21,
+        "punto_reposicion": 10,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Fideos",
+        "stock_actual": 0,
+        "dias_con_stock": 29,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 17.25,
+        "punto_reposicion": 10,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Aceite",
+        "stock_actual": 0,
+        "dias_con_stock": 31,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 15.17,
+        "punto_reposicion": 11,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Azúcar",
+        "stock_actual": 0,
+        "dias_con_stock": 45,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 14.28,
+        "punto_reposicion": 15,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Yerba",
+        "stock_actual": 0,
+        "dias_con_stock": 38,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 10.47,
+        "punto_reposicion": 9,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Sal",
+        "stock_actual": 0,
+        "dias_con_stock": 28,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 16.5,
+        "punto_reposicion": 9,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Lentejas",
+        "stock_actual": 0,
+        "dias_con_stock": 56,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 6.04,
+        "punto_reposicion": 10,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Leche",
+        "stock_actual": 0,
+        "dias_con_stock": 65,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 4.47,
+        "punto_reposicion": 11,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Agua",
+        "stock_actual": 0,
+        "dias_con_stock": 82,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 5.52,
+        "punto_reposicion": 17,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Jugo",
+        "stock_actual": 0,
+        "dias_con_stock": 79,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 2.6,
+        "punto_reposicion": 9,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Gaseosa",
+        "stock_actual": 0,
+        "dias_con_stock": 59,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 5.14,
+        "punto_reposicion": 8,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Galletitas",
+        "stock_actual": 0,
+        "dias_con_stock": 85,
+        "dias_cobertura": 0.0,
+        "rotacion_unidades": 4.11,
+        "punto_reposicion": 8,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Harina",
+        "stock_actual": 7,
+        "dias_con_stock": 25,
+        "dias_cobertura": 5.89,
+        "rotacion_unidades": 28.58,
+        "punto_reposicion": 9,
+        "bajo_reposicion": true
+      },
+      {
+        "producto": "Pan lactal",
+        "stock_actual": 20,
+        "dias_con_stock": 90,
+        "dias_cobertura": 17.48,
+        "rotacion_unidades": 2.71,
+        "punto_reposicion": 9,
+        "bajo_reposicion": false
+      },
+      {
+        "producto": "Atún",
+        "stock_actual": 90,
+        "dias_con_stock": 90,
+        "dias_cobertura": 92.05,
+        "rotacion_unidades": 1.19,
+        "punto_reposicion": 7,
+        "bajo_reposicion": false
+      },
+      {
+        "producto": "Puré de tomate",
+        "stock_actual": 73,
+        "dias_con_stock": 90,
+        "dias_cobertura": 107.7,
+        "rotacion_unidades": 0.82,
+        "punto_reposicion": 5,
+        "bajo_reposicion": false
+      },
+      {
+        "producto": "Jabón",
+        "stock_actual": 96,
+        "dias_con_stock": 90,
+        "dias_cobertura": 411.43,
+        "rotacion_unidades": 0.27,
+        "punto_reposicion": 2,
+        "bajo_reposicion": false
+      },
+      {
+        "producto": "Detergente",
+        "stock_actual": 106,
+        "dias_con_stock": 90,
+        "dias_cobertura": 433.64,
+        "rotacion_unidades": 0.28,
+        "punto_reposicion": 2,
+        "bajo_reposicion": false
+      },
+      {
+        "producto": "Papel higiénico",
+        "stock_actual": 93,
+        "dias_con_stock": 90,
+        "dias_cobertura": 930.0,
+        "rotacion_unidades": 0.13,
+        "punto_reposicion": 1,
+        "bajo_reposicion": false
+      },
+      {
+        "producto": "Esponja",
+        "stock_actual": 192,
+        "dias_con_stock": 90,
+        "dias_cobertura": 2468.57,
+        "rotacion_unidades": 0.06,
+        "punto_reposicion": 1,
+        "bajo_reposicion": false
+      }
+    ],
+    "03_vendedores": [
+      {
+        "puesto": 1,
+        "vendedor": "Camila Benítez",
+        "unidades_vendidas": 497,
+        "facturacion_neta": "4247450.00"
+      },
+      {
+        "puesto": 2,
+        "vendedor": "Fabricio Díaz",
+        "unidades_vendidas": 458,
+        "facturacion_neta": "3935252.50"
+      },
+      {
+        "puesto": 3,
+        "vendedor": "Matías Rojas",
+        "unidades_vendidas": 397,
+        "facturacion_neta": "3507095.00"
+      },
+      {
+        "puesto": 4,
+        "vendedor": "Lucía Fernández",
+        "unidades_vendidas": 326,
+        "facturacion_neta": "2494132.50"
+      },
+      {
+        "puesto": 5,
+        "vendedor": "Diego Acosta",
+        "unidades_vendidas": 301,
+        "facturacion_neta": "2447407.50"
+      }
+    ],
+    "04_abc": [
+      {
+        "clase_abc": "A",
+        "productos": 12,
+        "unidades": 1585,
+        "facturacion_neta": "13348810.00",
+        "porcentaje_facturacion": 80.26
+      },
+      {
+        "clase_abc": "B",
+        "productos": 4,
+        "unidades": 335,
+        "facturacion_neta": "2856112.50",
+        "porcentaje_facturacion": 17.17
+      },
+      {
+        "clase_abc": "C",
+        "productos": 4,
+        "unidades": 59,
+        "facturacion_neta": "426415.00",
+        "porcentaje_facturacion": 2.56
+      }
+    ],
+    "05_rentabilidad": [
+      {
+        "producto": "Aceite",
+        "unidades_vendidas": 135,
+        "facturacion_neta": "2141020.00",
+        "costo_vendido": "1492288.00",
+        "ganancia_bruta": "648732.00",
+        "margen_bruto_pct": 30.3
+      },
+      {
+        "producto": "Yerba",
+        "unidades_vendidas": 114,
+        "facturacion_neta": "1750550.00",
+        "costo_vendido": "1269108.00",
+        "ganancia_bruta": "481442.00",
+        "margen_bruto_pct": 27.5
+      },
+      {
+        "producto": "Azúcar",
+        "unidades_vendidas": 186,
+        "facturacion_neta": "1521370.00",
+        "costo_vendido": "1046250.00",
+        "ganancia_bruta": "475120.00",
+        "margen_bruto_pct": 31.23
+      },
+      {
+        "producto": "Lentejas",
+        "unidades_vendidas": 126,
+        "facturacion_neta": "1482000.00",
+        "costo_vendido": "1052440.00",
+        "ganancia_bruta": "429560.00",
+        "margen_bruto_pct": 28.99
+      },
+      {
+        "producto": "Leche",
+        "unidades_vendidas": 131,
+        "facturacion_neta": "1155600.00",
+        "costo_vendido": "751660.00",
+        "ganancia_bruta": "403940.00",
+        "margen_bruto_pct": 34.96
+      },
+      {
+        "producto": "Gaseosa",
+        "unidades_vendidas": 94,
+        "facturacion_neta": "1084590.00",
+        "costo_vendido": "738036.00",
+        "ganancia_bruta": "346554.00",
+        "margen_bruto_pct": 31.95
+      },
+      {
+        "producto": "Jugo",
+        "unidades_vendidas": 107,
+        "facturacion_neta": "928715.00",
+        "costo_vendido": "682794.00",
+        "ganancia_bruta": "245921.00",
+        "margen_bruto_pct": 26.48
+      },
+      {
+        "producto": "Agua",
+        "unidades_vendidas": 218,
+        "facturacion_neta": "804375.00",
+        "costo_vendido": "570475.00",
+        "ganancia_bruta": "233900.00",
+        "margen_bruto_pct": 29.08
+      },
+      {
+        "producto": "Fideos",
+        "unidades_vendidas": 120,
+        "facturacion_neta": "690007.50",
+        "costo_vendido": "497822.00",
+        "ganancia_bruta": "192185.50",
+        "margen_bruto_pct": 27.85
+      },
+      {
+        "producto": "Pan lactal",
+        "unidades_vendidas": 103,
+        "facturacion_neta": "1112100.00",
+        "costo_vendido": "921088.80",
+        "ganancia_bruta": "191011.20",
+        "margen_bruto_pct": 17.18
+      },
+      {
+        "producto": "Atún",
+        "unidades_vendidas": 88,
+        "facturacion_neta": "1066750.00",
+        "costo_vendido": "909686.65",
+        "ganancia_bruta": "157063.35",
+        "margen_bruto_pct": 14.72
+      },
+      {
+        "producto": "Arroz",
+        "unidades_vendidas": 126,
+        "facturacion_neta": "819787.50",
+        "costo_vendido": "701012.00",
+        "ganancia_bruta": "118775.50",
+        "margen_bruto_pct": 14.49
+      },
+      {
+        "producto": "Harina",
+        "unidades_vendidas": 107,
+        "facturacion_neta": "617015.00",
+        "costo_vendido": "503037.04",
+        "ganancia_bruta": "113977.96",
+        "margen_bruto_pct": 18.47
+      },
+      {
+        "producto": "Galletitas",
+        "unidades_vendidas": 92,
+        "facturacion_neta": "397575.00",
+        "costo_vendido": "304480.00",
+        "ganancia_bruta": "93095.00",
+        "margen_bruto_pct": 23.42
+      },
+      {
+        "producto": "Sal",
+        "unidades_vendidas": 112,
+        "facturacion_neta": "326270.00",
+        "costo_vendido": "239316.00",
+        "ganancia_bruta": "86954.00",
+        "margen_bruto_pct": 26.65
+      },
+      {
+        "producto": "Puré de tomate",
+        "unidades_vendidas": 61,
+        "facturacion_neta": "307197.50",
+        "costo_vendido": "233495.25",
+        "ganancia_bruta": "73702.25",
+        "margen_bruto_pct": 23.99
+      },
+      {
+        "producto": "Papel higiénico",
+        "unidades_vendidas": 9,
+        "facturacion_neta": "130500.00",
+        "costo_vendido": "85645.06",
+        "ganancia_bruta": "44854.94",
+        "margen_bruto_pct": 34.37
+      },
+      {
+        "producto": "Detergente",
+        "unidades_vendidas": 22,
+        "facturacion_neta": "189435.00",
+        "costo_vendido": "146755.13",
+        "ganancia_bruta": "42679.87",
+        "margen_bruto_pct": 22.53
+      },
+      {
+        "producto": "Jabón",
+        "unidades_vendidas": 21,
+        "facturacion_neta": "88795.00",
+        "costo_vendido": "72943.95",
+        "ganancia_bruta": "15851.05",
+        "margen_bruto_pct": 17.85
+      },
+      {
+        "producto": "Esponja",
+        "unidades_vendidas": 7,
+        "facturacion_neta": "17685.00",
+        "costo_vendido": "13396.24",
+        "ganancia_bruta": "4288.76",
+        "margen_bruto_pct": 24.25
+      }
+    ],
+    "06_perfil_ventas": [
+      {
+        "column_name": "cantidad",
+        "column_type": "INTEGER",
+        "min": "1",
+        "max": "4",
+        "approx_unique": 4,
+        "avg": "2.470661672908864",
+        "std": "1.1121828476656603",
+        "q25": "1",
+        "q50": "3",
+        "q75": "3",
+        "count": 801,
+        "null_percentage": "0.00"
+      },
+      {
+        "column_name": "precio_unitario",
+        "column_type": "DECIMAL(18,2)",
+        "min": "2700.00",
+        "max": "16400.00",
+        "approx_unique": 20,
+        "avg": "8621.473158551811",
+        "std": "3982.032405329111",
+        "q25": "5575",
+        "q50": "8350",
+        "q75": "11700",
+        "count": 801,
+        "null_percentage": "0.00"
+      },
+      {
+        "column_name": "importe_neto",
+        "column_type": "DECIMAL(18,2)",
+        "min": "2700.00",
+        "max": "65600.00",
+        "approx_unique": 151,
+        "avg": "20763.217852684145",
+        "std": "14318.580759027542",
+        "q25": "10162",
+        "q50": "16581",
+        "q75": "26990",
+        "count": 801,
+        "null_percentage": "0.00"
+      }
+    ],
+    "07_subtotales_mensuales": [
+      {
+        "anio": 2026,
+        "mes": 1,
+        "categoria": "Alimentos",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 70,
+        "facturacion_neta": "560360.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 1,
+        "categoria": "Bebidas",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 118,
+        "facturacion_neta": "875285.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 1,
+        "categoria": "Despensa",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 540,
+        "facturacion_neta": "4907100.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 1,
+        "categoria": null,
+        "es_total_general": false,
+        "es_subtotal": true,
+        "unidades": 728,
+        "facturacion_neta": "6342745.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 2,
+        "categoria": "Alimentos",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 105,
+        "facturacion_neta": "916085.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 2,
+        "categoria": "Bebidas",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 235,
+        "facturacion_neta": "1784947.50"
+      },
+      {
+        "anio": 2026,
+        "mes": 2,
+        "categoria": "Despensa",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 224,
+        "facturacion_neta": "2153690.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 2,
+        "categoria": "Limpieza",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 21,
+        "facturacion_neta": "139545.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 2,
+        "categoria": null,
+        "es_total_general": false,
+        "es_subtotal": true,
+        "unidades": 585,
+        "facturacion_neta": "4994267.50"
+      },
+      {
+        "anio": 2026,
+        "mes": 3,
+        "categoria": "Alimentos",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 169,
+        "facturacion_neta": "1407177.50"
+      },
+      {
+        "anio": 2026,
+        "mes": 3,
+        "categoria": "Bebidas",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 197,
+        "facturacion_neta": "1313047.50"
+      },
+      {
+        "anio": 2026,
+        "mes": 3,
+        "categoria": "Despensa",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 262,
+        "facturacion_neta": "2287230.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 3,
+        "categoria": "Limpieza",
+        "es_total_general": false,
+        "es_subtotal": false,
+        "unidades": 38,
+        "facturacion_neta": "286870.00"
+      },
+      {
+        "anio": 2026,
+        "mes": 3,
+        "categoria": null,
+        "es_total_general": false,
+        "es_subtotal": true,
+        "unidades": 666,
+        "facturacion_neta": "5294325.00"
+      },
+      {
+        "anio": null,
+        "mes": null,
+        "categoria": null,
+        "es_total_general": true,
+        "es_subtotal": true,
+        "unidades": 1979,
+        "facturacion_neta": "16631337.50"
+      }
+    ]
+  }
+}
