@@ -1,0 +1,21 @@
+id,nombre,categoria,costo_unitario,precio_venta,stock_inicial
+1,Arroz,Despensa,5200,6750,38
+2,Fideos,Despensa,4100,5850,44
+3,Aceite,Despensa,11200,16400,55
+4,Harina,Despensa,4600,5950,35
+5,Azúcar,Despensa,5400,8350,47
+6,Yerba,Despensa,10800,15700,45
+7,Sal,Despensa,2100,2950,53
+8,Lentejas,Despensa,8300,12000,45
+9,Leche,Bebidas,5900,9000,51
+10,Agua,Bebidas,2500,3750,52
+11,Jugo,Bebidas,6300,8900,52
+12,Gaseosa,Bebidas,7800,11700,46
+13,Galletitas,Alimentos,3200,4500,35
+14,Pan lactal,Alimentos,8700,11000,47
+15,Atún,Alimentos,9800,12550,31
+16,Puré de tomate,Alimentos,3800,5150,54
+17,Detergente,Limpieza,6700,8650,42
+18,Jabón,Limpieza,3400,4300,54
+19,Papel higiénico,Limpieza,9400,14500,49
+20,Esponja,Limpieza,1900,2700,49
