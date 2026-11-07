@@ -1,0 +1,156 @@
+version: 2
+
+sources:
+  - name: minimercado
+    schema: raw_minimercado
+    tables:
+      - name: productos
+      - name: vendedores
+      - name: compras
+      - name: ventas
+      - name: movimientos_stock
+
+models:
+  - name: stg_productos
+    columns:
+      - name: producto_id
+        data_tests: [not_null, unique]
+      - name: producto
+        data_tests: [not_null]
+      - name: categoria
+        data_tests: [not_null]
+      - name: costo_inicial
+        data_tests: [not_null]
+      - name: precio_lista
+        data_tests: [not_null]
+      - name: stock_inicial
+        data_tests: [not_null]
+
+  - name: stg_vendedores
+    columns:
+      - name: vendedor_id
+        data_tests: [not_null, unique]
+      - name: vendedor
+        data_tests: [not_null]
+      - name: sucursal
+        data_tests: [not_null]
+      - name: fecha_alta
+        data_tests: [not_null]
+
+  - name: stg_compras
+    columns:
+      - name: compra_id
+        data_tests: [not_null, unique]
+      - name: fecha
+        data_tests: [not_null]
+      - name: cantidad
+        data_tests: [not_null]
+      - name: costo_unitario
+        data_tests: [not_null]
+      - name: proveedor
+        data_tests: [not_null]
+      - name: producto_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_productos')
+                field: producto_id
+
+  - name: stg_ventas
+    columns:
+      - name: venta_id
+        data_tests: [not_null, unique]
+      - name: fecha
+        data_tests: [not_null]
+      - name: cantidad
+        data_tests: [not_null]
+      - name: precio_unitario
+        data_tests: [not_null]
+      - name: descuento
+        data_tests: [not_null]
+      - name: importe_neto
+        data_tests: [not_null]
+      - name: producto_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_productos')
+                field: producto_id
+      - name: vendedor_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_vendedores')
+                field: vendedor_id
+
+  - name: stg_movimientos_stock
+    columns:
+      - name: movimiento_id
+        data_tests: [not_null, unique]
+      - name: fecha
+        data_tests: [not_null]
+      - name: referencia_id
+        data_tests: [not_null]
+      - name: cantidad
+        data_tests: [not_null]
+      - name: producto_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_productos')
+                field: producto_id
+      - name: tipo
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['entrada', 'salida']
+
+  - name: mart_ventas_diarias
+    columns:
+      - name: fecha
+        data_tests: [not_null, unique]
+      - name: facturacion_neta
+        data_tests: [not_null]
+      - name: unidades_vendidas
+        data_tests: [not_null]
+
+  - name: mart_rentabilidad_productos
+    columns:
+      - name: producto_id
+        data_tests: [not_null, unique]
+      - name: ganancia_bruta
+        data_tests: [not_null]
+      - name: facturacion_neta
+        data_tests: [not_null]
+
+  - name: mart_rotacion_inventario
+    columns:
+      - name: producto_id
+        data_tests: [not_null, unique]
+      - name: stock_actual
+        data_tests: [not_null]
+      - name: bajo_reposicion
+        data_tests: [not_null]
+
+  - name: mart_desempeno_vendedores
+    columns:
+      - name: vendedor_id
+        data_tests: [not_null, unique]
+      - name: facturacion_neta
+        data_tests: [not_null]
+
+  - name: mart_abc_productos
+    columns:
+      - name: producto_id
+        data_tests: [not_null, unique]
+      - name: clase_abc
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['A', 'B', 'C']
