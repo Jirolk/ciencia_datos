@@ -1,0 +1,127 @@
+id,fecha,producto_id,cantidad,costo_unitario,proveedor
+1,2026-01-13,20,16,1.29,Snacks SA
+2,2026-01-14,4,29,0.79,Distribuidora Río
+3,2026-01-16,8,41,1.09,Panificadora Central
+4,2026-01-16,13,17,0.82,Almacenes Unidos
+5,2026-01-17,14,17,2.38,Almacenes Unidos
+6,2026-01-18,3,14,0.97,Distribuidora Río
+7,2026-01-20,4,29,0.8,Distribuidora Río
+8,2026-01-20,5,44,0.88,Lácteos La Pradera
+9,2026-01-21,1,56,0.33,Bebidas del Sur
+10,2026-01-24,2,44,1.06,Bebidas del Sur
+11,2026-01-24,8,41,1.14,Panificadora Central
+12,2026-01-26,10,23,0.87,Almacenes Unidos
+13,2026-01-28,1,56,0.34,Bebidas del Sur
+14,2026-01-29,5,44,0.89,Granja Fresca
+15,2026-01-30,19,20,1.02,Snacks SA
+16,2026-01-31,2,44,1.08,Bebidas del Sur
+17,2026-01-31,10,23,0.94,Almacenes Unidos
+18,2026-02-01,9,26,0.59,Panificadora Central
+19,2026-02-01,11,23,0.55,Mayorista Norte
+20,2026-02-01,20,16,1.28,Snacks SA
+21,2026-02-02,4,29,0.81,Bebidas del Sur
+22,2026-02-02,6,20,0.98,Lácteos La Pradera
+23,2026-02-02,8,41,1.1,Panificadora Central
+24,2026-02-05,5,44,0.81,Granja Fresca
+25,2026-02-07,1,56,0.34,Distribuidora Río
+26,2026-02-08,2,44,1.13,Distribuidora Río
+27,2026-02-08,13,17,0.78,Mayorista Norte
+28,2026-02-09,3,14,0.91,Bebidas del Sur
+29,2026-02-09,12,17,1.79,Almacenes Unidos
+30,2026-02-09,14,17,2.41,Almacenes Unidos
+31,2026-02-11,10,23,0.88,Almacenes Unidos
+32,2026-02-12,4,29,0.77,Bebidas del Sur
+33,2026-02-12,8,41,1.1,Dulces Hogar
+34,2026-02-12,12,17,1.77,Almacenes Unidos
+35,2026-02-13,15,13,2.36,Mayorista Norte
+36,2026-02-14,7,12,3.13,Granja Fresca
+37,2026-02-15,2,44,1.06,Distribuidora Río
+38,2026-02-15,3,14,0.99,Bebidas del Sur
+39,2026-02-15,9,26,0.61,Panificadora Central
+40,2026-02-15,19,20,1.02,Snacks SA
+41,2026-02-16,6,20,0.98,Lácteos La Pradera
+42,2026-02-16,11,23,0.53,Almacenes Unidos
+43,2026-02-17,5,44,0.88,Granja Fresca
+44,2026-02-18,1,56,0.35,Bebidas del Sur
+45,2026-02-19,4,29,0.83,Bebidas del Sur
+46,2026-02-19,14,17,2.51,Almacenes Unidos
+47,2026-02-20,10,23,0.87,Almacenes Unidos
+48,2026-02-20,20,16,1.31,Snacks SA
+49,2026-02-21,8,41,1.06,Dulces Hogar
+50,2026-02-21,9,26,0.6,Panificadora Central
+51,2026-02-23,12,17,1.79,Mayorista Norte
+52,2026-02-24,2,44,1.06,Distribuidora Río
+53,2026-02-25,19,20,1.04,Snacks SA
+54,2026-02-26,1,56,0.35,Distribuidora Río
+55,2026-02-26,6,20,1.04,Granja Fresca
+56,2026-02-26,9,26,0.58,Panificadora Central
+57,2026-02-28,4,29,0.78,Distribuidora Río
+58,2026-02-28,5,44,0.84,Lácteos La Pradera
+59,2026-02-28,8,41,1.05,Dulces Hogar
+60,2026-02-28,14,17,2.49,Mayorista Norte
+61,2026-03-01,3,14,0.94,Bebidas del Sur
+62,2026-03-02,16,13,1.18,Mayorista Norte
+63,2026-03-03,11,23,0.54,Almacenes Unidos
+64,2026-03-04,2,44,1.06,Distribuidora Río
+65,2026-03-04,10,23,0.9,Almacenes Unidos
+66,2026-03-04,12,17,1.83,Almacenes Unidos
+67,2026-03-05,1,56,0.36,Distribuidora Río
+68,2026-03-06,13,17,0.82,Mayorista Norte
+69,2026-03-07,9,26,0.61,Panificadora Central
+70,2026-03-07,19,20,1.01,Distribuidora Río
+71,2026-03-07,20,16,1.32,Snacks SA
+72,2026-03-08,5,44,0.84,Granja Fresca
+73,2026-03-08,6,20,1.02,Granja Fresca
+74,2026-03-09,3,14,0.98,Distribuidora Río
+75,2026-03-09,8,41,1.05,Panificadora Central
+76,2026-03-10,4,29,0.76,Bebidas del Sur
+77,2026-03-11,11,23,0.56,Almacenes Unidos
+78,2026-03-13,1,56,0.36,Bebidas del Sur
+79,2026-03-13,18,11,0.59,Mayorista Norte
+80,2026-03-14,9,26,0.59,Dulces Hogar
+81,2026-03-14,13,17,0.77,Almacenes Unidos
+82,2026-03-15,8,41,1.1,Dulces Hogar
+83,2026-03-15,17,14,1.5,Mayorista Norte
+84,2026-03-16,19,20,0.96,Distribuidora Río
+85,2026-03-17,2,44,1.06,Distribuidora Río
+86,2026-03-17,14,17,2.39,Almacenes Unidos
+87,2026-03-18,4,29,0.84,Bebidas del Sur
+88,2026-03-18,10,23,0.93,Almacenes Unidos
+89,2026-03-19,5,44,0.88,Lácteos La Pradera
+90,2026-03-20,1,56,0.34,Distribuidora Río
+91,2026-03-21,8,41,1.05,Dulces Hogar
+92,2026-03-22,12,17,1.85,Mayorista Norte
+93,2026-03-22,15,13,2.23,Mayorista Norte
+94,2026-03-23,4,29,0.77,Distribuidora Río
+95,2026-03-23,6,20,0.98,Granja Fresca
+96,2026-03-23,13,17,0.77,Almacenes Unidos
+97,2026-03-23,20,16,1.33,Snacks SA
+98,2026-03-24,7,12,3.23,Granja Fresca
+99,2026-03-24,11,23,0.56,Almacenes Unidos
+100,2026-03-25,9,26,0.6,Dulces Hogar
+101,2026-03-26,19,20,1.02,Distribuidora Río
+102,2026-03-27,3,14,0.96,Distribuidora Río
+103,2026-03-28,2,44,1.13,Distribuidora Río
+104,2026-03-28,5,44,0.83,Granja Fresca
+105,2026-03-28,17,14,1.46,Mayorista Norte
+106,2026-03-29,1,56,0.35,Distribuidora Río
+107,2026-03-29,14,17,2.58,Mayorista Norte
+108,2026-03-29,18,11,0.57,Mayorista Norte
+109,2026-03-30,4,29,0.8,Bebidas del Sur
+110,2026-03-30,8,41,1.11,Dulces Hogar
+111,2026-03-31,9,26,0.61,Dulces Hogar
+112,2026-03-31,13,17,0.82,Mayorista Norte
+113,2026-03-31,16,13,1.16,Limpiamax
+114,2026-04-01,6,20,1.05,Lácteos La Pradera
+115,2026-04-02,16,13,1.22,Mayorista Norte
+116,2026-04-03,10,23,0.93,Almacenes Unidos
+117,2026-04-03,12,17,1.75,Mayorista Norte
+118,2026-04-04,19,20,1.01,Distribuidora Río
+119,2026-04-05,1,56,0.36,Bebidas del Sur
+120,2026-04-05,2,44,1.11,Bebidas del Sur
+121,2026-04-06,5,44,0.83,Granja Fresca
+122,2026-04-08,4,29,0.78,Distribuidora Río
+123,2026-04-09,9,26,0.57,Dulces Hogar
+124,2026-04-09,15,13,2.36,Almacenes Unidos
+125,2026-04-10,10,23,0.91,Mayorista Norte
+126,2026-04-10,11,23,0.55,Mayorista Norte

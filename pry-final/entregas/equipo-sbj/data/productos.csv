@@ -1,0 +1,21 @@
+id,nombre,categoria,costo_unitario,precio_venta,stock_inicial
+1,Agua mineral 500ml,Bebidas,0.35,0.7,158
+2,Gaseosa cola 2L,Bebidas,1.1,1.9,109
+3,Jugo de naranja 1L,Bebidas,0.95,1.7,26
+4,Cerveza lata 350ml,Bebidas,0.8,1.5,74
+5,Leche entera 1L,Lácteos,0.85,1.35,113
+6,Yogur natural 1L,Lácteos,1.0,1.7,49
+7,Queso fresco 500g,Lácteos,3.2,4.8,24
+8,Pan de molde,Panadería,1.1,1.9,101
+9,Galletitas dulces,Panadería,0.6,1.2,75
+10,Arroz 1kg,Almacén,0.9,1.5,52
+11,Fideos 500g,Almacén,0.55,1.0,68
+12,Aceite de girasol 900ml,Almacén,1.8,2.9,47
+13,Azúcar 1kg,Almacén,0.8,1.3,35
+14,Yerba mate 1kg,Almacén,2.5,3.9,34
+15,Café molido 250g,Almacén,2.3,3.8,24
+16,Detergente 750ml,Limpieza,1.2,2.1,28
+17,Papel higiénico x4,Limpieza,1.5,2.6,33
+18,Lavandina 1L,Limpieza,0.6,1.1,34
+19,Papas fritas 150g,Snacks,1.0,1.9,61
+20,Chocolate en tableta,Snacks,1.3,2.4,30
