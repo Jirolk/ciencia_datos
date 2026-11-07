@@ -1,0 +1,93 @@
+version: 2
+
+models:
+  - name: dim_productos
+    description: "Una fila por producto del catálogo."
+    columns:
+      - name: producto_id
+        data_tests: [not_null, unique]
+      - name: producto
+        data_tests: [not_null]
+      - name: categoria
+        data_tests: [not_null]
+
+  - name: dim_vendedores
+    description: "Una fila por vendedor; atributos sin historial de versiones."
+    columns:
+      - name: vendedor_id
+        data_tests: [not_null, unique]
+      - name: vendedor
+        data_tests: [not_null]
+
+  - name: dim_fecha
+    description: "Una fila por día del calendario completo del período."
+    columns:
+      - name: fecha
+        data_tests: [not_null, unique]
+      - name: anio
+        data_tests: [not_null]
+      - name: mes
+        data_tests: [not_null]
+      - name: trimestre
+        data_tests: [not_null]
+
+  - name: fct_ventas
+    description: "Una fila por línea vendida de un producto, en una fecha y por un vendedor."
+    columns:
+      - name: venta_id
+        data_tests: [not_null, unique]
+      - name: cantidad
+        data_tests: [not_null]
+      - name: precio_unitario
+        data_tests: [not_null]
+      - name: descuento
+        data_tests: [not_null]
+      - name: importe_neto
+        data_tests: [not_null]
+      - name: producto_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_productos')
+                field: producto_id
+      - name: vendedor_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_vendedores')
+                field: vendedor_id
+      - name: fecha
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_fecha')
+                field: fecha
+
+  - name: fct_compras
+    description: "Una fila por línea comprada de un producto a un proveedor."
+    columns:
+      - name: compra_id
+        data_tests: [not_null, unique]
+      - name: cantidad
+        data_tests: [not_null]
+      - name: costo_unitario
+        data_tests: [not_null]
+      - name: costo_total
+        data_tests: [not_null]
+      - name: producto_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_productos')
+                field: producto_id
+      - name: fecha
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_fecha')
+                field: fecha
