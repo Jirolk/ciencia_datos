@@ -1,0 +1,140 @@
+{
+  "fecha": "2026-10-25T00:46:36.599638-03:00",
+  "sistema": "Linux",
+  "codespaces": true,
+  "contenedor": true,
+  "python": "3.12.11",
+  "versiones": {
+    "dlt": "1.30.0",
+    "duckdb": "1.5.6",
+    "pytest": "9.1.1",
+    "ruff": "0.16.10"
+  },
+  "controles": {
+    "ruff": "All checks passed!",
+    "formato": "4 files already formatted",
+    "pytest": "...........                                                              [100%]\n11 passed in 8.87s"
+  },
+  "datos": {
+    "total": 100,
+    "columnas": [
+      [
+        "user_id",
+        "BIGINT",
+        "YES",
+        null,
+        null,
+        null
+      ],
+      [
+        "id",
+        "BIGINT",
+        "NO",
+        null,
+        null,
+        null
+      ],
+      [
+        "title",
+        "VARCHAR",
+        "YES",
+        null,
+        null,
+        null
+      ],
+      [
+        "body",
+        "VARCHAR",
+        "YES",
+        null,
+        null,
+        null
+      ],
+      [
+        "_dlt_load_id",
+        "VARCHAR",
+        "NO",
+        null,
+        null,
+        null
+      ],
+      [
+        "_dlt_id",
+        "VARCHAR",
+        "NO",
+        null,
+        null,
+        null
+      ]
+    ],
+    "por_usuario": [
+      [
+        1,
+        10
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        10
+      ]
+    ],
+    "muestra": [
+      [
+        1,
+        1,
+        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+      ],
+      [
+        2,
+        1,
+        "qui est esse"
+      ],
+      [
+        3,
+        1,
+        "ea molestias quasi exercitationem repellat qui ipsa sit aut"
+      ],
+      [
+        4,
+        1,
+        "eum et est occaecati"
+      ],
+      [
+        5,
+        1,
+        "nesciunt quas odio"
+      ]
+    ]
+  }
+}

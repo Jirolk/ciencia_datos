@@ -1,0 +1,21 @@
+id,nombre,categoria,costo_unitario,precio_venta,stock_inicial
+1,"Agua mineral 1,5 L",bebidas,3500,5000,120
+2,Gaseosa cola 2 L,bebidas,9000,13000,100
+3,Jugo de naranja 1 L,bebidas,7000,10000,70
+4,Cerveza lata 350 ml,bebidas,6500,9500,100
+5,Yerba mate 500 g,bebidas,14000,19000,80
+6,Leche entera 1 L,lácteos,6500,8500,120
+7,Yogur de frutilla 1 L,lácteos,8000,11500,60
+8,Queso paraguay 500 g,lácteos,22000,30000,40
+9,Manteca 200 g,lácteos,9000,12500,50
+10,Crema de leche 200 ml,lácteos,5000,7500,50
+11,Detergente 750 ml,limpieza,8000,11500,60
+12,Lavandina 1 L,limpieza,4500,6500,60
+13,Jabón en polvo 1 kg,limpieza,16000,22000,50
+14,Papel higiénico x4,limpieza,12000,17000,100
+15,Esponja x3,limpieza,3500,5500,60
+16,Papas fritas 150 g,snacks,9500,13500,80
+17,Galletitas dulces 300 g,snacks,5000,7500,100
+18,Chocolate en barra,snacks,6000,9000,90
+19,Maní salado 200 g,snacks,5500,8000,60
+20,Alfajor,snacks,3500,5500,110

@@ -1,0 +1,3 @@
+# Base generada por pipeline.py: se reconstruye ejecutando el pipeline
+*.duckdb
+*.duckdb.wal

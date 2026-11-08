@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: stg_productos
+    description: Catálogo de productos con tipos ya convertidos.
+    columns:
+      - name: producto_id
+        tests: [unique, not_null]
+      - name: nombre_producto
+        tests: [not_null]
+      - name: categoria
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["bebidas", "lácteos", "limpieza", "snacks"]
+      - name: costo_unitario
+        tests: [not_null]
+      - name: precio_venta
+        tests: [not_null]
+
+  - name: stg_vendedores
+    description: Vendedores del minimercado.
+    columns:
+      - name: vendedor_id
+        tests: [unique, not_null]
+      - name: nombre_vendedor
+        tests: [not_null]
+
+  - name: stg_compras
+    description: Compras a proveedores (entradas de mercadería).
+    columns:
+      - name: compra_id
+        tests: [unique, not_null]
+      - name: fecha_compra
+        tests: [not_null]
+      - name: producto_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_productos')
+                field: producto_id
+
+  - name: stg_ventas
+    description: Ventas registradas, una fila por venta.
+    columns:
+      - name: venta_id
+        tests: [unique, not_null]
+      - name: fecha_venta
+        tests: [not_null]
+      - name: producto_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_productos')
+                field: producto_id
+      - name: vendedor_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_vendedores')
+                field: vendedor_id

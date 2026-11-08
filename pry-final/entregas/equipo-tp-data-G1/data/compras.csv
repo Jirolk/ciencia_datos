@@ -1,0 +1,117 @@
+id,fecha,producto_id,cantidad,costo_unitario,proveedor
+1,2026-07-06,15,13,3332,Importadora Sur
+2,2026-07-06,4,11,6557,Distribuidora Guaraní
+3,2026-07-06,8,8,21056,Lácteos del Este
+4,2026-07-06,18,8,5837,Mayorista Central
+5,2026-07-06,3,8,7252,Distribuidora Guaraní
+6,2026-07-13,9,8,8654,Lácteos del Este
+7,2026-07-13,12,12,4355,Importadora Sur
+8,2026-07-13,17,12,4769,Mayorista Central
+9,2026-07-13,13,14,15753,Importadora Sur
+10,2026-07-13,11,13,7949,Importadora Sur
+11,2026-07-20,5,15,13951,Distribuidora Guaraní
+12,2026-07-20,14,12,11787,Importadora Sur
+13,2026-07-20,6,11,6715,Lácteos del Este
+14,2026-07-20,17,9,4889,Mayorista Central
+15,2026-07-20,9,15,8769,Lácteos del Este
+16,2026-07-27,5,8,14662,Distribuidora Guaraní
+17,2026-07-27,10,11,5105,Lácteos del Este
+18,2026-07-27,15,12,3518,Importadora Sur
+19,2026-07-27,16,14,9114,Mayorista Central
+20,2026-07-27,4,9,6475,Distribuidora Guaraní
+21,2026-08-03,14,15,12139,Importadora Sur
+22,2026-08-03,19,12,5243,Mayorista Central
+23,2026-08-03,5,13,13604,Distribuidora Guaraní
+24,2026-08-03,20,15,3658,Mayorista Central
+25,2026-08-03,4,13,6240,Distribuidora Guaraní
+26,2026-08-10,3,15,7295,Distribuidora Guaraní
+27,2026-08-10,13,13,16121,Importadora Sur
+28,2026-08-10,2,14,9189,Distribuidora Guaraní
+29,2026-08-10,14,14,11747,Importadora Sur
+30,2026-08-10,1,14,3332,Distribuidora Guaraní
+31,2026-08-17,3,10,6854,Distribuidora Guaraní
+32,2026-08-17,4,8,6575,Distribuidora Guaraní
+33,2026-08-17,16,11,9567,Mayorista Central
+34,2026-08-17,1,10,3558,Distribuidora Guaraní
+35,2026-08-17,8,9,22052,Lácteos del Este
+36,2026-08-24,10,15,4958,Lácteos del Este
+37,2026-08-24,15,15,3396,Importadora Sur
+38,2026-08-24,3,10,6869,Distribuidora Guaraní
+39,2026-08-24,2,13,9211,Distribuidora Guaraní
+40,2026-08-24,6,13,6809,Lácteos del Este
+41,2026-08-27,5,15,14292,Distribuidora Guaraní
+42,2026-08-31,6,9,6436,Lácteos del Este
+43,2026-08-31,13,9,15496,Importadora Sur
+44,2026-08-31,14,10,11973,Importadora Sur
+45,2026-08-31,17,11,4753,Mayorista Central
+46,2026-08-31,11,14,7788,Importadora Sur
+47,2026-09-02,7,15,7693,Lácteos del Este
+48,2026-09-05,2,13,9070,Distribuidora Guaraní
+49,2026-09-07,8,12,21737,Lácteos del Este
+50,2026-09-07,7,13,7847,Lácteos del Este
+51,2026-09-07,13,13,16021,Importadora Sur
+52,2026-09-07,20,15,3488,Mayorista Central
+53,2026-09-07,11,15,8209,Importadora Sur
+54,2026-09-14,5,12,14329,Distribuidora Guaraní
+55,2026-09-14,16,12,9801,Mayorista Central
+56,2026-09-14,19,14,5426,Mayorista Central
+57,2026-09-14,8,11,22203,Lácteos del Este
+58,2026-09-14,11,10,8145,Importadora Sur
+59,2026-09-14,13,8,16725,Importadora Sur
+60,2026-09-15,1,9,3363,Distribuidora Guaraní
+61,2026-09-15,6,11,6602,Lácteos del Este
+62,2026-09-17,1,14,3545,Distribuidora Guaraní
+63,2026-09-18,2,10,9282,Distribuidora Guaraní
+64,2026-09-18,5,12,14586,Distribuidora Guaraní
+65,2026-09-19,6,15,6493,Lácteos del Este
+66,2026-09-20,2,14,8699,Distribuidora Guaraní
+67,2026-09-21,13,15,15724,Importadora Sur
+68,2026-09-21,17,8,5184,Mayorista Central
+69,2026-09-21,9,9,9208,Lácteos del Este
+70,2026-09-21,12,15,4561,Importadora Sur
+71,2026-09-21,15,13,3623,Importadora Sur
+72,2026-09-26,6,10,6355,Lácteos del Este
+73,2026-09-27,2,9,8997,Distribuidora Guaraní
+74,2026-09-28,1,8,3659,Distribuidora Guaraní
+75,2026-09-28,3,9,7037,Distribuidora Guaraní
+76,2026-09-28,15,8,3454,Importadora Sur
+77,2026-09-28,10,12,5032,Lácteos del Este
+78,2026-09-28,18,12,6144,Mayorista Central
+79,2026-09-28,11,11,7971,Importadora Sur
+80,2026-09-30,2,12,9317,Distribuidora Guaraní
+81,2026-10-01,1,11,3358,Distribuidora Guaraní
+82,2026-10-02,6,12,6357,Lácteos del Este
+83,2026-10-04,5,13,14286,Distribuidora Guaraní
+84,2026-10-05,15,9,3448,Importadora Sur
+85,2026-10-05,1,9,3577,Distribuidora Guaraní
+86,2026-10-05,9,8,8897,Lácteos del Este
+87,2026-10-05,7,14,8375,Lácteos del Este
+88,2026-10-05,8,14,21985,Lácteos del Este
+89,2026-10-06,2,15,9184,Distribuidora Guaraní
+90,2026-10-09,6,9,6427,Lácteos del Este
+91,2026-10-11,1,10,3348,Distribuidora Guaraní
+92,2026-10-11,2,14,8672,Distribuidora Guaraní
+93,2026-10-11,5,8,13543,Distribuidora Guaraní
+94,2026-10-12,8,14,22773,Lácteos del Este
+95,2026-10-12,9,15,8777,Lácteos del Este
+96,2026-10-12,10,15,4901,Lácteos del Este
+97,2026-10-12,19,14,5546,Mayorista Central
+98,2026-10-12,14,8,12014,Importadora Sur
+99,2026-10-14,5,10,14626,Distribuidora Guaraní
+100,2026-10-14,6,13,6600,Lácteos del Este
+101,2026-10-18,5,8,14131,Distribuidora Guaraní
+102,2026-10-19,1,13,3407,Distribuidora Guaraní
+103,2026-10-19,1,9,3598,Distribuidora Guaraní
+104,2026-10-19,3,9,7156,Distribuidora Guaraní
+105,2026-10-19,4,9,6763,Distribuidora Guaraní
+106,2026-10-19,16,11,9459,Mayorista Central
+107,2026-10-19,5,12,13670,Distribuidora Guaraní
+108,2026-10-20,2,15,8713,Distribuidora Guaraní
+109,2026-10-22,6,11,6600,Lácteos del Este
+110,2026-10-23,2,12,9100,Distribuidora Guaraní
+111,2026-10-25,6,12,6619,Lácteos del Este
+112,2026-10-26,10,10,5118,Lácteos del Este
+113,2026-10-26,15,9,3457,Importadora Sur
+114,2026-10-26,6,14,6356,Lácteos del Este
+115,2026-10-26,3,12,6741,Distribuidora Guaraní
+116,2026-10-26,18,12,5703,Mayorista Central

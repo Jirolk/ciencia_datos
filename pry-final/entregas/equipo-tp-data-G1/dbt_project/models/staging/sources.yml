@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw_minimercado
+    description: Tablas crudas cargadas por dlt desde los CSV sintéticos.
+    schema: raw_minimercado
+    tables:
+      - name: productos
+      - name: vendedores
+      - name: compras
+      - name: ventas
+      - name: movimientos_stock

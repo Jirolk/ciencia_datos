@@ -1,0 +1,8 @@
+minimercado:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # La ruta se puede cambiar con la variable DUCKDB_PATH (por ejemplo desde Dagster).
+      path: "{{ env_var('DUCKDB_PATH', '../data.duckdb') }}"
+      schema: analytics

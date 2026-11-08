@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: mart_ventas_diarias
+    description: Resumen de ventas por fecha.
+    columns:
+      - name: fecha
+        tests: [unique, not_null]
+      - name: facturacion
+        tests: [not_null]
+
+  - name: mart_rentabilidad_productos
+    description: Ingresos, costo y ganancia bruta por producto.
+    columns:
+      - name: producto_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_productos')
+                field: producto_id
+
+  - name: mart_rotacion_inventario
+    description: Rotación, días de stock y alerta de reposición por producto.
+    columns:
+      - name: producto_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_productos')
+                field: producto_id
+      - name: stock_final
+        tests: [not_null]
+
+  - name: mart_desempeno_vendedores
+    description: Ventas acumuladas y ranking por vendedor.
+    columns:
+      - name: vendedor_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_vendedores')
+                field: vendedor_id
+
+  - name: mart_clasificacion_abc
+    description: Clasificación ABC de productos según sus ingresos.
+    columns:
+      - name: producto_id
+        tests:
+          - unique
+          - not_null
+      - name: clase_abc
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["A", "B", "C"]

@@ -1,0 +1,7 @@
+transformacion:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../car_ingestion.duckdb
+      threads: 4

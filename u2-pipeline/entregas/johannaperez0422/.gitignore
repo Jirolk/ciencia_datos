@@ -1,0 +1,6 @@
+# Archivos locales generados al ejecutar el pipeline y las pruebas.
+*.duckdb
+*.duckdb.wal
+.dlt/
+__pycache__/
+.pytest_cache/

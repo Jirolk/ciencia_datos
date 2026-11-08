@@ -1,0 +1,8 @@
+version: 2
+sources:
+ - name: bronze_raw
+   schema: bronze_raw
+   description: Tablas crudas desde CSV via DLT
+   tables:
+     - name: raw_car_sales
+       description: Ventas desde CSV

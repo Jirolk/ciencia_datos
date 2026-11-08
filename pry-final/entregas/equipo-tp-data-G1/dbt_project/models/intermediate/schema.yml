@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: int_movimientos_stock
+    description: Historial de entradas y salidas por producto, con el stock luego de cada movimiento.
+    columns:
+      - name: referencia
+        description: Identifica el movimiento de origen (compra-N o venta-N).
+        tests: [unique, not_null]
+      - name: producto_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_productos')
+                field: producto_id
+      - name: tipo
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["entrada", "salida"]
+
+  - name: int_ventas_detalle
+    description: Ventas con producto, vendedor e importes calculados.
+    columns:
+      - name: venta_id
+        tests: [unique, not_null]

@@ -1,0 +1,11 @@
+# Archivos generados que no se suben
+*.duckdb
+*.duckdb.wal
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+.dagster/
+dbt_project/.user.yml

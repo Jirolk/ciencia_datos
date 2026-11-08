@@ -1,0 +1,18 @@
+# Entorno y caché de Python
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+
+# Artefactos generados al ejecutar (se reconstruyen con los comandos del README)
+data.duckdb
+data.duckdb.wal
+.dlt_pipelines/
+reportes/
+dbt_project/target/
+dbt_project/logs/
+dbt_project/dbt_packages/
+logs/
+.dagster/
+tmp*/
+dbt_project/.user.yml

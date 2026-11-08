@@ -1,0 +1,22 @@
+name: minimercado
+version: "1.0.0"
+config-version: 2
+
+profile: minimercado
+
+model-paths: ["models"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+
+vars:
+  # Días de venta que queremos tener cubiertos antes de reponer (plazo de entrega + margen de seguridad).
+  dias_cobertura_reposicion: 14
+
+models:
+  minimercado:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

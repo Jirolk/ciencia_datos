@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: dim_salesperson
+    description: Un registro por vendedor.
+    columns:
+      - name: salesperson_id
+        data_tests: [unique, not_null]
+
+  - name: dim_customer
+    description: Un registro por cliente.
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+
+  - name: dim_car
+    description: Un registro por combinación marca, modelo y año.
+    columns:
+      - name: car_key
+        data_tests: [unique, not_null]
+
+  - name: dim_date
+    description: Un registro por fecha con ventas.
+    columns:
+      - name: date_key
+        data_tests: [unique, not_null]
+
+  - name: fct_sales
+    description: Una fila por venta de un vehículo (grano atómico).
+    columns:
+      - name: sale_date
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: salesperson_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_salesperson')
+              field: salesperson_id
+      - name: customer_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+      - name: car_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_car')
+              field: car_key
+      - name: sale_price
+        data_tests: [not_null]  

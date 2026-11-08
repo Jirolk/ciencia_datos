@@ -1,0 +1,37 @@
+[project]
+name = "minimercado-pipeline"
+version = "1.0.0"
+description = "Pipeline analítico de un minimercado: datos sintéticos, dlt, DuckDB, dbt y Dagster."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dlt[duckdb]>=1.30",
+    "duckdb>=1.5",
+    "dbt-core>=1.12",
+    "dbt-duckdb>=1.11",
+    "dagster>=1.13",
+    "dagster-webserver>=1.13",
+    "pytest>=9",
+    "ruff>=0.16",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["generar_datos", "pipeline", "consultas"]
+
+[tool.dagster]
+python_file = "orchestration/definitions.py"
+
+# Misma configuración de estilo que el repositorio del curso.
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["test_pipeline.py"]
