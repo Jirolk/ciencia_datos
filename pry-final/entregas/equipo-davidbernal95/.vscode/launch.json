@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Ejecutar minimercado completo",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "dagster",
+      "args": [
+        "job",
+        "execute",
+        "-m",
+        "orchestration.definitions",
+        "-j",
+        "minimercado_job"
+      ],
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "justMyCode": true,
+      "subProcess": false,
+      "env": {
+        "DAGSTER_HOME": "${workspaceFolder}/.runtime/dagster",
+        "RUNTIME__DLTHUB_TELEMETRY": "false",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  ]
+}
