@@ -6,19 +6,15 @@ semilla (`--seed`) genera siempre exactamente los mismos archivos.
 
 Se simula día a día el funcionamiento del local:
   1. Se registra el stock inicial de cada producto.
-  2. Cada mañana se reponen (compra a proveedor) los productos cuyo stock cayó
-     por debajo de su umbral.
+  2. Cada mañana se reponen (compra a proveedor) los productos cuyo stock cayó por debajo de su umbral.
   3. Se registran pequeñas mermas de productos perecederos.
-  4. Se generan las ventas del día (la demanda varía por día de semana, por
-     producto y tiene una leve tendencia de crecimiento).
-Cada compra, venta y merma genera su movimiento de stock, por lo que el stock
-nunca queda negativo.
+  4. Se generan las ventas del día (la demanda varía por día de semana, por producto y tiene una leve tendencia de crecimiento).
+Cada compra, venta y merma genera su movimiento de stock, por lo que el stock nunca queda negativo.
 
 Uso:
     python generar_datos.py     # escribe en ./data
     python generar_datos.py --seed 7 --dias 120 --salida /tmp/datos
 """
-
 from __future__ import annotations
 
 import argparse
@@ -81,30 +77,12 @@ COLUMNAS = {
     "productos": ["id", "nombre", "categoria", "costo_unitario", "precio_venta", "stock_inicial"],
     "vendedores": ["id", "nombre", "sucursal", "fecha_alta"],
     "compras": ["id", "fecha", "producto_id", "cantidad", "costo_unitario", "proveedor"],
-    "ventas": [
-        "id",
-        "fecha",
-        "producto_id",
-        "cantidad",
-        "precio_unitario",
-        "descuento",
-        "vendedor_id",
-    ],
-    "movimientos_stock": [
-        "id",
-        "fecha",
-        "producto_id",
-        "tipo",
-        "cantidad",
-        "motivo",
-        "referencia_id",
-    ],
+    "ventas": ["id", "fecha", "producto_id", "cantidad", "precio_unitario", "descuento", "vendedor_id"],
+    "movimientos_stock": ["id", "fecha", "producto_id", "tipo", "cantidad", "motivo", "referencia_id"],
 }
 
 
-def generar(
-    seed: int = SEED, dias: int = DIAS, fecha_inicio: date = FECHA_INICIO
-) -> dict[str, list[dict]]:
+def generar(seed: int = SEED, dias: int = DIAS, fecha_inicio: date = FECHA_INICIO) -> dict[str, list[dict]]:
     """Simula la operación y devuelve las cinco tablas como listas de dicts."""
     if dias < 90:
         raise ValueError("El enunciado exige al menos 90 días de actividad.")
@@ -113,25 +91,16 @@ def generar(
     # --- Dimensiones ---
     productos = []
     for i, (nombre, cat, costo, precio, pop) in enumerate(CATALOGO, start=1):
-        productos.append(
-            {
-                "id": i,
-                "nombre": nombre,
-                "categoria": cat,
-                "costo_unitario": costo,
-                "precio_venta": precio,
-                "stock_inicial": int(round(pop * 8 + rng.randint(10, 30))),
-            }
-        )
+        productos.append({
+            "id": i, "nombre": nombre, "categoria": cat,
+            "costo_unitario": costo, "precio_venta": precio,
+            "stock_inicial": int(round(pop * 8 + rng.randint(10, 30))),
+        })
     popularidad = {i: CATALOGO[i - 1][4] for i in range(1, len(CATALOGO) + 1)}
 
     vendedores = [
-        {
-            "id": i,
-            "nombre": n,
-            "sucursal": suc,
-            "fecha_alta": (fecha_inicio - timedelta(days=antig)).isoformat(),
-        }
+        {"id": i, "nombre": n, "sucursal": suc,
+         "fecha_alta": (fecha_inicio - timedelta(days=antig)).isoformat()}
         for i, (n, suc, antig, _) in enumerate(VENDEDORES, start=1)
     ]
     peso_vendedor = {i: VENDEDORES[i - 1][3] for i in range(1, len(VENDEDORES) + 1)}
@@ -142,17 +111,9 @@ def generar(
     stock = {p["id"]: p["stock_inicial"] for p in productos}
 
     def mov(fecha, pid, tipo, cantidad, motivo, ref):
-        movs.append(
-            {
-                "id": len(movs) + 1,
-                "fecha": fecha.isoformat(),
-                "producto_id": pid,
-                "tipo": tipo,
-                "cantidad": cantidad,
-                "motivo": motivo,
-                "referencia_id": "" if ref is None else ref,
-            }
-        )
+        movs.append({"id": len(movs) + 1, "fecha": fecha.isoformat(), "producto_id": pid,
+                     "tipo": tipo, "cantidad": cantidad, "motivo": motivo,
+                     "referencia_id": "" if ref is None else ref})
 
     # 1) Stock inicial
     for p in productos:
@@ -170,24 +131,17 @@ def generar(
             if stock[pid] <= umbral:
                 lote = math.ceil(popularidad[pid] * 3 + 8)
                 costo = round(p["costo_unitario"] * rng.uniform(0.95, 1.05), 2)
-                compras.append(
-                    {
-                        "id": len(compras) + 1,
-                        "fecha": hoy.isoformat(),
-                        "producto_id": pid,
-                        "cantidad": lote,
-                        "costo_unitario": costo,
-                        "proveedor": rng.choice(PROVEEDORES[p["categoria"]]),
-                    }
-                )
+                compras.append({
+                    "id": len(compras) + 1, "fecha": hoy.isoformat(), "producto_id": pid,
+                    "cantidad": lote, "costo_unitario": costo,
+                    "proveedor": rng.choice(PROVEEDORES[p["categoria"]]),
+                })
                 stock[pid] += lote
                 mov(hoy, pid, "entrada", lote, "compra", compras[-1]["id"])
 
         # 3) Mermas de perecederos (≈ 15 % de los días)
         if rng.random() < 0.15:
-            perecederos = [
-                p["id"] for p in productos if p["categoria"] in PERECEDEROS and stock[p["id"]] > 5
-            ]
+            perecederos = [p["id"] for p in productos if p["categoria"] in PERECEDEROS and stock[p["id"]] > 5]
             if perecederos:
                 pid = rng.choice(perecederos)
                 u = rng.randint(1, 3)
@@ -202,7 +156,7 @@ def generar(
         for p in productos:
             w = popularidad[p["id"]]
             if p["nombre"].startswith("Cerveza") and dow in (4, 5):
-                w *= 1.8  # más cerveza los días viernes y sábado
+                w *= 1.8  # más cerveza los días viernes y sábado 
             pesos_prod.append(w)
 
         for _ in range(n_ventas):
@@ -213,27 +167,16 @@ def generar(
                 continue  # venta perdida por quiebre de stock
             vid = rng.choices(vend_activos, weights=[peso_vendedor[v] for v in vend_activos])[0]
             descuento = rng.choices([0.0, 0.05, 0.10, 0.15], weights=[75, 12, 9, 4])[0]
-            ventas.append(
-                {
-                    "id": len(ventas) + 1,
-                    "fecha": hoy.isoformat(),
-                    "producto_id": p["id"],
-                    "cantidad": cantidad,
-                    "precio_unitario": p["precio_venta"],
-                    "descuento": descuento,
-                    "vendedor_id": vid,
-                }
-            )
+            ventas.append({
+                "id": len(ventas) + 1, "fecha": hoy.isoformat(), "producto_id": p["id"],
+                "cantidad": cantidad, "precio_unitario": p["precio_venta"],
+                "descuento": descuento, "vendedor_id": vid,
+            })
             stock[p["id"]] -= cantidad
             mov(hoy, p["id"], "salida", cantidad, "venta", ventas[-1]["id"])
 
-    datos = {
-        "productos": productos,
-        "vendedores": vendedores,
-        "compras": compras,
-        "ventas": ventas,
-        "movimientos_stock": movs,
-    }
+    datos = {"productos": productos, "vendedores": vendedores, "compras": compras,
+             "ventas": ventas, "movimientos_stock": movs}
     validar(datos, dias)
     return datos
 
@@ -250,15 +193,9 @@ def validar(datos: dict[str, list[dict]], dias: int = DIAS) -> None:
     assert all(v["producto_id"] in pids and v["vendedor_id"] in vids for v in datos["ventas"])
     assert all(c["producto_id"] in pids for c in datos["compras"])
     assert all(m["producto_id"] in pids for m in datos["movimientos_stock"])
-    assert all(
-        v["cantidad"] > 0 and v["precio_unitario"] > 0 and 0 <= v["descuento"] < 1
-        for v in datos["ventas"]
-    )
+    assert all(v["cantidad"] > 0 and v["precio_unitario"] > 0 and 0 <= v["descuento"] < 1 for v in datos["ventas"])
     assert all(c["cantidad"] > 0 and c["costo_unitario"] > 0 for c in datos["compras"])
-    assert all(
-        p["costo_unitario"] > 0 and p["precio_venta"] > p["costo_unitario"]
-        for p in datos["productos"]
-    )
+    assert all(p["costo_unitario"] > 0 and p["precio_venta"] > p["costo_unitario"] for p in datos["productos"])
 
     # El stock acumulado nunca debe ser negativo
     saldo: dict[int, int] = {}
@@ -287,17 +224,11 @@ def escribir_csv(datos: dict[str, list[dict]], salida: Path) -> list[Path]:
 
 
 def main(argv: list[str] | None = None) -> dict[str, int]:
-    ap = argparse.ArgumentParser(
-        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
-    )
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--seed", type=int, default=SEED, help="semilla aleatoria (default: 42)")
     ap.add_argument("--dias", type=int, default=DIAS, help="días de actividad (mínimo 90)")
-    ap.add_argument(
-        "--salida",
-        type=Path,
-        default=Path(__file__).resolve().parent / "data",
-        help="carpeta de salida (default: ./data)",
-    )
+    ap.add_argument("--salida", type=Path, default=Path(__file__).resolve().parent / "data",
+                    help="carpeta de salida (default: ./data)")
     args = ap.parse_args(argv)
     datos = generar(args.seed, args.dias)
     escribir_csv(datos, args.salida)

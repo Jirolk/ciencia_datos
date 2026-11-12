@@ -1,0 +1,15 @@
+name: minimercado
+version: '1.0.0'
+config-version: 2
+profile: minimercado
+model-paths: [models]
+test-paths: [tests]
+
+models:
+  minimercado:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table

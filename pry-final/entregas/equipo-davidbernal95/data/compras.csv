@@ -1,0 +1,109 @@
+id,fecha,producto_id,cantidad,costo_unitario,proveedor
+1,2026-01-01,1,19,5980,Mayorista Horizonte
+2,2026-01-01,10,10,2825,Comercial San Miguel
+3,2026-01-02,8,15,9462,Alimentos del Sur
+4,2026-01-03,15,22,11270,Mayorista Horizonte
+5,2026-01-04,2,15,4305,Alimentos del Sur
+6,2026-01-05,9,20,5841,Alimentos del Sur
+7,2026-01-06,16,21,3610,Distribuidora Central
+8,2026-01-06,5,9,6156,Comercial San Miguel
+9,2026-01-07,3,14,12208,Mayorista Horizonte
+10,2026-01-08,10,12,2375,Distribuidora Central
+11,2026-01-09,17,22,7370,Mayorista Horizonte
+12,2026-01-10,4,8,5014,Mayorista Horizonte
+13,2026-01-11,11,22,6111,Comercial San Miguel
+14,2026-01-11,20,19,1957,Mayorista Horizonte
+15,2026-01-12,18,8,3094,Alimentos del Sur
+16,2026-01-13,5,21,4914,Alimentos del Sur
+17,2026-01-14,12,13,8892,Comercial San Miguel
+18,2026-01-15,19,9,10716,Alimentos del Sur
+19,2026-01-16,6,23,10368,Comercial San Miguel
+20,2026-01-16,15,13,10486,Mayorista Horizonte
+21,2026-01-17,13,9,3584,Comercial San Miguel
+22,2026-01-18,20,13,1976,Alimentos del Sur
+23,2026-01-19,7,10,2058,Alimentos del Sur
+24,2026-01-20,14,13,9309,Alimentos del Sur
+25,2026-01-21,1,21,5772,Comercial San Miguel
+26,2026-01-21,10,19,2300,Distribuidora Central
+27,2026-01-22,8,18,8632,Distribuidora Central
+28,2026-01-23,15,14,9702,Alimentos del Sur
+29,2026-01-24,2,20,4305,Alimentos del Sur
+30,2026-01-25,9,10,5782,Alimentos del Sur
+31,2026-01-26,16,21,4142,Mayorista Horizonte
+32,2026-01-26,5,20,5994,Distribuidora Central
+33,2026-01-27,3,22,10416,Distribuidora Central
+34,2026-01-28,10,12,2875,Distribuidora Central
+35,2026-01-29,17,13,6298,Alimentos del Sur
+36,2026-01-30,4,8,4140,Comercial San Miguel
+37,2026-01-31,11,9,6930,Distribuidora Central
+38,2026-01-31,20,23,1786,Mayorista Horizonte
+39,2026-02-01,18,22,3536,Distribuidora Central
+40,2026-02-02,5,8,6102,Distribuidora Central
+41,2026-02-03,12,11,8034,Mayorista Horizonte
+42,2026-02-04,19,9,8648,Alimentos del Sur
+43,2026-02-05,6,16,11556,Comercial San Miguel
+44,2026-02-05,15,9,10094,Mayorista Horizonte
+45,2026-02-06,13,13,2880,Alimentos del Sur
+46,2026-02-07,20,23,2014,Alimentos del Sur
+47,2026-02-08,7,10,2163,Comercial San Miguel
+48,2026-02-09,14,20,9222,Comercial San Miguel
+49,2026-02-10,1,15,5044,Alimentos del Sur
+50,2026-02-10,10,22,2875,Alimentos del Sur
+51,2026-02-11,8,13,7553,Mayorista Horizonte
+52,2026-02-12,15,20,9604,Alimentos del Sur
+53,2026-02-13,2,13,3895,Mayorista Horizonte
+54,2026-02-14,9,20,5664,Comercial San Miguel
+55,2026-02-15,16,10,3458,Distribuidora Central
+56,2026-02-15,5,18,6048,Comercial San Miguel
+57,2026-02-16,3,8,11200,Comercial San Miguel
+58,2026-02-17,10,22,2600,Mayorista Horizonte
+59,2026-02-18,17,20,6834,Comercial San Miguel
+60,2026-02-19,4,20,5244,Distribuidora Central
+61,2026-02-20,11,9,6048,Comercial San Miguel
+62,2026-02-20,20,22,1900,Distribuidora Central
+63,2026-02-21,18,14,3468,Mayorista Horizonte
+64,2026-02-22,5,20,5508,Alimentos del Sur
+65,2026-02-23,12,15,7098,Alimentos del Sur
+66,2026-02-24,19,19,8648,Comercial San Miguel
+67,2026-02-25,6,13,12420,Comercial San Miguel
+68,2026-02-25,15,23,9800,Alimentos del Sur
+69,2026-02-26,13,19,3552,Alimentos del Sur
+70,2026-02-27,20,21,2128,Distribuidora Central
+71,2026-02-28,7,17,2058,Mayorista Horizonte
+72,2026-03-01,14,21,8700,Distribuidora Central
+73,2026-03-02,1,17,5720,Distribuidora Central
+74,2026-03-02,10,23,2875,Alimentos del Sur
+75,2026-03-03,8,20,7885,Alimentos del Sur
+76,2026-03-04,15,14,10682,Comercial San Miguel
+77,2026-03-05,2,16,4305,Mayorista Horizonte
+78,2026-03-06,9,13,5428,Alimentos del Sur
+79,2026-03-07,16,10,3648,Distribuidora Central
+80,2026-03-07,5,11,5292,Mayorista Horizonte
+81,2026-03-08,3,19,10528,Distribuidora Central
+82,2026-03-09,10,17,2725,Distribuidora Central
+83,2026-03-10,17,18,6298,Distribuidora Central
+84,2026-03-11,4,22,4600,Alimentos del Sur
+85,2026-03-12,11,15,6930,Distribuidora Central
+86,2026-03-12,20,14,1748,Alimentos del Sur
+87,2026-03-13,18,19,3774,Distribuidora Central
+88,2026-03-14,5,21,5724,Comercial San Miguel
+89,2026-03-15,12,9,7644,Alimentos del Sur
+90,2026-03-16,19,16,10716,Mayorista Horizonte
+91,2026-03-17,6,17,11664,Alimentos del Sur
+92,2026-03-17,15,20,11270,Mayorista Horizonte
+93,2026-03-18,13,16,3456,Distribuidora Central
+94,2026-03-19,20,15,1767,Comercial San Miguel
+95,2026-03-20,7,22,2310,Comercial San Miguel
+96,2026-03-21,14,22,9222,Comercial San Miguel
+97,2026-03-22,1,16,5980,Alimentos del Sur
+98,2026-03-22,10,13,2725,Mayorista Horizonte
+99,2026-03-23,8,15,8383,Alimentos del Sur
+100,2026-03-24,15,12,11074,Alimentos del Sur
+101,2026-03-25,2,12,3936,Alimentos del Sur
+102,2026-03-26,9,17,5428,Alimentos del Sur
+103,2026-03-27,16,18,4104,Distribuidora Central
+104,2026-03-27,5,11,6156,Comercial San Miguel
+105,2026-03-28,3,17,10976,Comercial San Miguel
+106,2026-03-29,10,16,2325,Mayorista Horizonte
+107,2026-03-30,17,13,6030,Mayorista Horizonte
+108,2026-03-31,4,21,4554,Distribuidora Central

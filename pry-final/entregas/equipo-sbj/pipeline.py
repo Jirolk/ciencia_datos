@@ -13,7 +13,6 @@ Uso:
 La ruta de la base también puede fijarse con la variable de entorno
 DUCKDB_PATH (la usan dbt, Dagster y los tests).
 """
-
 from __future__ import annotations
 
 import argparse
@@ -21,9 +20,9 @@ import csv
 import os
 import subprocess
 import sys
-from collections.abc import Callable, Iterator
 from datetime import date
 from pathlib import Path
+from typing import Callable, Iterator
 
 import dlt
 import duckdb
@@ -40,48 +39,18 @@ _int = int
 _float = float
 _fecha = date.fromisoformat
 _texto = str
-
-
-def _int_nulo(s: str) -> int | None:
-    return int(s) if s != "" else None
-
+_int_nulo: Callable[[str], int | None] = lambda s: int(s) if s != "" else None
 
 TABLAS: dict[str, dict[str, Callable]] = {
-    "productos": {
-        "id": _int,
-        "nombre": _texto,
-        "categoria": _texto,
-        "costo_unitario": _float,
-        "precio_venta": _float,
-        "stock_inicial": _int,
-    },
+    "productos": {"id": _int, "nombre": _texto, "categoria": _texto, "costo_unitario": _float,
+                  "precio_venta": _float, "stock_inicial": _int},
     "vendedores": {"id": _int, "nombre": _texto, "sucursal": _texto, "fecha_alta": _fecha},
-    "compras": {
-        "id": _int,
-        "fecha": _fecha,
-        "producto_id": _int,
-        "cantidad": _int,
-        "costo_unitario": _float,
-        "proveedor": _texto,
-    },
-    "ventas": {
-        "id": _int,
-        "fecha": _fecha,
-        "producto_id": _int,
-        "cantidad": _int,
-        "precio_unitario": _float,
-        "descuento": _float,
-        "vendedor_id": _int,
-    },
-    "movimientos_stock": {
-        "id": _int,
-        "fecha": _fecha,
-        "producto_id": _int,
-        "tipo": _texto,
-        "cantidad": _int,
-        "motivo": _texto,
-        "referencia_id": _int_nulo,
-    },
+    "compras": {"id": _int, "fecha": _fecha, "producto_id": _int, "cantidad": _int,
+                "costo_unitario": _float, "proveedor": _texto},
+    "ventas": {"id": _int, "fecha": _fecha, "producto_id": _int, "cantidad": _int,
+               "precio_unitario": _float, "descuento": _float, "vendedor_id": _int},
+    "movimientos_stock": {"id": _int, "fecha": _fecha, "producto_id": _int, "tipo": _texto,
+                          "cantidad": _int, "motivo": _texto, "referencia_id": _int_nulo},
 }
 
 _TIPOS_DLT = {_int: "bigint", _int_nulo: "bigint", _float: "double", _fecha: "date", _texto: "text"}
@@ -109,9 +78,8 @@ def minimercado_source(data_dir: Path = DATA_DIR):
     return [_crear_recurso(n, conv, Path(data_dir)) for n, conv in TABLAS.items()]
 
 
-def ejecutar_ingesta(
-    data_dir: Path = DATA_DIR, db_path: Path = DB_PATH, pipelines_dir: Path | None = None
-):
+def ejecutar_ingesta(data_dir: Path = DATA_DIR, db_path: Path = DB_PATH,
+                     pipelines_dir: Path | None = None):
     """Carga los CSV en DuckDB y devuelve la información de carga de dlt."""
     db_path = Path(db_path).resolve()
     pipeline = dlt.pipeline(
@@ -140,29 +108,16 @@ def ejecutar_dbt(db_path: Path = DB_PATH, comando: str = "build") -> None:
     Lanza RuntimeError si algún modelo o prueba falla.
     """
     entorno = {**os.environ, "DUCKDB_PATH": str(Path(db_path).resolve())}
-    cmd = [
-        sys.executable,
-        "-c",
-        "import sys; from dbt.cli.main import cli; sys.exit(cli())",
-        comando,
-        "--project-dir",
-        str(DBT_DIR),
-        "--profiles-dir",
-        str(DBT_DIR),
-    ]
+    cmd = [sys.executable, "-c", "import sys; from dbt.cli.main import cli; sys.exit(cli())",
+           comando, "--project-dir", str(DBT_DIR), "--profiles-dir", str(DBT_DIR)]
     resultado = subprocess.run(cmd, env=entorno, cwd=RAIZ, capture_output=True, text=True)
     print(resultado.stdout)
     if resultado.returncode != 0:
-        raise RuntimeError(
-            f"dbt {comando} falló (código {resultado.returncode}):\n"
-            f"{resultado.stdout[-3000:]}\n{resultado.stderr[-1000:]}"
-        )
+        raise RuntimeError(f"dbt {comando} falló (código {resultado.returncode}):\n{resultado.stdout[-3000:]}\n{resultado.stderr[-1000:]}")
 
 
 def main(argv: list[str] | None = None) -> dict[str, int]:
-    ap = argparse.ArgumentParser(
-        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
-    )
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data-dir", type=Path, default=DATA_DIR)
     ap.add_argument("--db", type=Path, default=DB_PATH)
     args = ap.parse_args(argv)
